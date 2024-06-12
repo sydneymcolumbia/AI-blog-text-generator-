@@ -1,0 +1,71 @@
+function text_generator_form() {
+    ob_start(); ?>
+    <div class="text-generator">
+        <h1>Write a few sentences of your blog post</h1>
+        <p>We will then generate your completed 500 word blog post</p>
+        <textarea id="input-text" placeholder="Type here" rows="5" cols="50"></textarea>
+        <button id="generate-text-btn">Generate blog post</button>
+        <h2>Your Generated Blog Post</h2>
+        <p>Copy and paste onto your website to improve its SEO!</p>
+        <textarea id="generated-text" placeholder="Generated blog post text" rows="10" cols="50"></textarea>
+    </div>
+    <script>
+        jQuery(document).ready(function($) {
+            $('#generate-text-btn').on('click', function() {
+                var inputText = $('#input-text').val();
+                $.post({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    data: {
+                        action: 'generate_blog_post',
+                        text: inputText
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#generated-text').val(response.data);
+                        } else {
+                            $('#generated-text').val('Error generating text: ' + response.data);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .text-generator {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .text-generator h1, .text-generator h2 {
+            color: #333;
+        }
+        .text-generator p {
+            color: #666;
+        }
+        .text-generator textarea {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .text-generator button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .text-generator button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+    <?php return ob_get_clean();
+}
+add_shortcode('text_generator_form', 'text_generator_form');
