@@ -1,0 +1,20 @@
+function call_openai_api($text) {
+    $api_url = 'https://api.openai.com/v1/completions';
+    $response = wp_remote_post($api_url, array(
+        'body' => json_encode(array(
+            'model' => 'gpt-3.5-turbo-1106',
+            'prompt' => $text,
+            'max_tokens' => 500
+        )),
+        'headers' => array(
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . OPENAI_API_KEY
+        )
+    ));
+    if (is_wp_error($response)) {
+        return 'API request failed.';
+    }
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+    return isset($data['choices'][0]['text']) ? $data['choices'][0]['text'] : 'No response from API.';
+}
