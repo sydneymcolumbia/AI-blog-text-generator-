@@ -22,3 +22,20 @@ Dropdown Menu: A dropdown allowing users to select the style or tone of the gene
 Button: A large, black button labeled "Generate blog post" positioned centrally below the input field.
 5. Output Section
 Generated Text Display: A section below the generate button where the generated text will be displayed after the user clicks the "Generate Text" button. This can be a bordered box or a styled div to highlight the result.
+
+
+Instructions in WordPress staging
+
+Create snippets
+
+In your wp-config.php file, add PHP code in file
+In Snippets > Add New, create a snippet titled "cURL Request Function" and add code in file
+In Snippets > Add New, create a snippet titled "Handle Generate Blog Post AJAX" and add code in file
+In Snippets > Add New, create a snippet titled "Shortcode for Form" and add code in file
+In Snippets > Add New, create a snippet titled "jQuery"
+In Snippets > Add New, create a snippet titled "Functions"
+
+Activate all snippets
+Add Shortcode to New Page
+Go to Pages > Add New or edit an existing page
+Add a Shortcode block and insert code in the "Shortcode for Form"
