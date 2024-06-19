@@ -52,3 +52,4 @@ Go to Pages > Add New or edit an existing page
 
 Add a Shortcode block and insert code in the "Shortcode for Form"
 
+![Screenshot 2024-06-19 at 3 30 19 PM](https://github.com/sydneymcolumbia/AI-blog-text-generator-/assets/95938157/137364ac-c2df-458e-93e0-13d9ec5a79f9)
