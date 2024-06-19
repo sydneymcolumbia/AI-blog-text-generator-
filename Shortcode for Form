@@ -7,7 +7,7 @@ function text_generator_form() {
         <button id="generate-text-btn">Generate blog post</button>
         <h2>Your Generated Blog Post</h2>
         <p>Copy and paste onto your website to improve its SEO!</p>
-        <textarea id="generated-text" placeholder="Generated blog post text" rows="10" cols="50"></textarea>
+        <textarea id="generated-text" placeholder="Generated blog post text" rows="10" cols="50" readonly></textarea>
     </div>
     <script>
         jQuery(document).ready(function($) {
@@ -64,6 +64,9 @@ function text_generator_form() {
         }
         .text-generator button:hover {
             background-color: #005bb5;
+        }
+        textarea[readonly] {
+            background-color: #f5f5f5;
         }
     </style>
     <?php return ob_get_clean();
