@@ -5,6 +5,7 @@ The MAVENWIT Text Generator is a WordPress-based application designed to generat
 
 Wireframe Description
 
+
 1. Header Section (Designed on WordPress)
 Logo: Positioned at the top-left corner to brand the application.
 Navigation Links/Icons: Placed at the top-right corner, includes links such as Home, About, Contact, and a link to GitHub or other social media if relevant.
@@ -26,16 +27,28 @@ Generated Text Display: A section below the generate button where the generated 
 
 Instructions in WordPress staging
 
+
 Create snippets
 
+
 In your wp-config.php file, add PHP code in file
+
 In Snippets > Add New, create a snippet titled "cURL Request Function" and add code in file
+
 In Snippets > Add New, create a snippet titled "Handle Generate Blog Post AJAX" and add code in file
+
 In Snippets > Add New, create a snippet titled "Shortcode for Form" and add code in file
-In Snippets > Add New, create a snippet titled "jQuery"
-In Snippets > Add New, create a snippet titled "Functions"
+
+In Snippets > Add New, create a snippet titled "jQuery" and add code in file
+
+In Snippets > Add New, create a snippet titled "Functions" and add code in file
+
 
 Activate all snippets
+
 Add Shortcode to New Page
+
 Go to Pages > Add New or edit an existing page
+
 Add a Shortcode block and insert code in the "Shortcode for Form"
+
